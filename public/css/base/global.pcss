@@ -1,0 +1,46 @@
+@layer base {
+
+    body {
+        @apply text-base;
+        font-family: theme('fontFamily.sans');
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: subpixel-antialiased;
+        scroll-behavior: smooth;
+        -moz-osx-font-smoothing: grayscale;
+        @media screen {
+        font-feature-settings: 'dlig' 0, 'liga' 0, 'lnum' 1, 'kern' 1;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    /* styling for blog article  - this probably needs to moved somewhere else later*/
+    .blog-content{
+        width: 70%;
+        margin: auto;
+    }
+    
+    .container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    max-width: 108.75rem; /* 1740px */
+    padding: 0 theme('spacing.5');
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @media screen(md) {
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+        }
+
+    @media screen(lg) {
+        padding: 0 theme('spacing.24');
+        }
+
+    @media screen(xl) {
+        padding: 0 theme('spacing.32');
+        }
+    }
+}
